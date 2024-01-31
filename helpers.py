@@ -1,6 +1,6 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import logging
+import logging, os
 
 class Helper:
 
@@ -14,6 +14,7 @@ class Helper:
             logging.info(f"Navigated to URL: '{url}'.")
         except Exception as e:
             logging.error(f"Exception in 'navigate_to_url': {e}")
+            self.make_screenshot("go_to_page_screen.png")
     
     def find_and_send_keys(self, loc, inp_txt):
         try:
@@ -22,14 +23,16 @@ class Helper:
             logging.info(f"'{inp_txt}' text is entered in the search-box.")
         except Exception as e:
             logging.error(f"Exception in 'find_and_send_keys': {e}")
+            self.make_screenshot("send_keys_screen.png")
 
-    def find_and_click(self, loc, sec=60):
+    def find_and_click(self, loc, sec=150):
         try:
             elem = self.move_to_element(loc)
             WebDriverWait(self.browser, sec).until(EC.element_to_be_clickable(loc))
             elem.click()
         except Exception as e:
             logging.error(f"Exception in 'find_and_click': {e}")
+            self.make_screenshot("find_and_click_screen.png")
     
     def move_to_element(self, loc):
         try:
@@ -38,10 +41,14 @@ class Helper:
             return elem
         except Exception as e:
             logging.error(f"Exception in 'move_to_element': {e}")
+            self.make_screenshot("move_to_elem_screen.png")
 
     def find_elems_dom(self, loc, sec=50):
         try:
             return WebDriverWait(self.browser, sec).until(EC.presence_of_all_elements_located(loc))
         except Exception as e:
             logging.error(f"Exception in 'find_elems_dom': {e}")
+            self.make_screenshot("elem_in_dom_screen.png")
         
+    def make_screenshot(self, file_name):
+        self.browser.save_screenshot(os.path.join(os.path.dirname(__file__), file_name))

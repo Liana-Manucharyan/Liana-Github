@@ -18,9 +18,12 @@ def test_auto_web_search(driver):
     helper_obj.find_and_send_keys(inp_text_loc, search_text)
     helper_obj.find_and_click(btn_submit_loc)
     search_result = helper_obj.find_elems_dom(lst_result_loc)
+    
     assert len(search_result) > 0
+    helper_obj.make_screenshot("count_len.png")
     logging.info(f"'{len(search_result)}' results found for search '{search_text}' text.")
 
     t_end = datetime.datetime.now()
     logging.info(f"Program has ended at: {t_end}")
     logging.info(f"Program run duration is: {t_end - t_start}")
+    
