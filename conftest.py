@@ -5,7 +5,9 @@ import logging, os
 @pytest.fixture()
 def driver():
     try:
-        driver = webdriver.Chrome()
+        options = webdriver.ChromeOptions()
+        options.add_argument('--headless')
+        driver = webdriver.Chrome(options=options)
         logging.info(f"'{driver.name.capitalize()}' browser is opened.")
         driver.maximize_window()
         yield driver
