@@ -9,8 +9,8 @@ def test_auto_web_search(driver):
 
     url = "https://auto.am/"
     search_text = "Infiniti"
-    inp_text_loc = (By.ID, "searchInp")
-    btn_submit_loc = (By.XPATH, "//i[@id='submit_search']")
+    inp_text_loc = (By.ID, "searchInp-small")
+    btn_submit_loc = (By.XPATH, "//i[@id='submit_search-small']")
     lst_result_loc = (By.XPATH, "//div[@id='search-result']//div[contains(@class, 'card ')]")
 
     helper_obj = Helper(driver)
