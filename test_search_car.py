@@ -24,5 +24,3 @@ def test_auto_web_search(driver):
     t_end = datetime.datetime.now()
     logging.info(f"Program has ended at: {t_end}")
     logging.info(f"Program run duration is: {t_end - t_start}")
-
-
