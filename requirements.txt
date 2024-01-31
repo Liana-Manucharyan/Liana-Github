@@ -1,0 +1,5 @@
+selenium
+pycodestyle
+pytest
+allure-pytest
+allure-python-commons
