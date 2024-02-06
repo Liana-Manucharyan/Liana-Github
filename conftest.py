@@ -1,13 +1,12 @@
 from selenium import webdriver
 import pytest
-import logging, os
+import logging
+
 
 @pytest.fixture()
 def driver():
     try:
-        options = webdriver.ChromeOptions()
-        options.add_argument('--headless')
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Firefox()
         logging.info(f"'{driver.name.capitalize()}' browser is opened.")
         driver.maximize_window()
         yield driver
@@ -18,12 +17,9 @@ def driver():
 
 
 def pytest_configure():
-  
-    logging.basicConfig(level=logging.INFO,  
-                        format='%(asctime)s - %(levelname)s - %(message)s',  
-                        datefmt='%Y-%m-%d %H:%M:%S',
-                        filename=os.path.join(os.path.dirname(__file__), "logs.log"),
-                        filemode = "a",
-                        encoding='utf-8'
+    logging.basicConfig(filename= "my_log.log",
+                        level=logging.INFO,
+                        format='%(asctime)s %(levelname)s - %(message)s',
+                        datefmt='%d-%b-%y %H:%M:%S'
                         )
     
