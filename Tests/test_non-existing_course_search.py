@@ -27,8 +27,8 @@ def test_search_with_invalid_course_name(driver):
         login_obj.login_to_app(data["login"]["email"], data["login"]["password"])
 
     home_obj = HomePage(driver)
-    home_obj.search_result(my_data.no_existing_course_name)
-    search_result = home_obj.get_result_and_titles()
+    home_obj.get_search_result(my_data.no_existing_course_name)
+    search_result = home_obj.check_page_items()
     assert search_result == "No results were found"
     logging.info(f"No courses found with '{my_data.no_existing_course_name}' key.")
 

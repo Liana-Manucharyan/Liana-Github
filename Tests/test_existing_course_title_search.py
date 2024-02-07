@@ -28,9 +28,9 @@ def test_search_valid_course_check_title(driver, course_name):
         login_obj.login_to_app(data["login"]["email"], data["login"]["password"])
 
     home_obj = HomePage(driver)
-    home_obj.search_result(course_name) 
-    result = home_obj.get_result_and_titles()
-    home_obj.check_titles(result, course_name)
+    home_obj.get_search_result(course_name) 
+    titles = home_obj.check_pages_and_get_titles()
+    home_obj.check_titles(course_name, titles)
 
     t_end = datetime.datetime.now()
     logging.info(f"Program has ended at: {t_end}")

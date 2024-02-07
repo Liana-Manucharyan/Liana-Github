@@ -1,0 +1,95 @@
+[32mINFO    [0m root:conftest.py:10 'Firefox' browser is opened.
+[32mINFO    [0m root:test_existing_course_title_search.py:14 Program has started at: 2024-02-07 11:41:34.180885
+[32mINFO    [0m root:general_functions.py:105 Loaded JSON data: {'url': 'https://courses.ultimateqa.com/collections', 'login': {'email': '', 'password': ''}}.
+[32mINFO    [0m root:general_functions.py:18 Navigated to URL: 'https://courses.ultimateqa.com/collections'
+[32mINFO    [0m root:general_functions.py:76 'Sign In' button is clicked.
+[32mINFO    [0m root:welcome.py:13 'Login' page is opened.
+[32mINFO    [0m root:general_functions.py:76 'Create a new account' button is clicked.
+[32mINFO    [0m root:login.py:17 'Sign-up' page is opened.
+[32mINFO    [0m root:general_functions.py:57 'April' text is entered in name: 'user[first_name]' input field.
+[32mINFO    [0m root:general_functions.py:57 'Baldwin' text is entered in name: 'user[last_name]' input field.
+[32mINFO    [0m root:general_functions.py:57 'colemanbrooke@example.com' text is entered in name: 'user[email]' input field.
+[32mINFO    [0m root:general_functions.py:57 '(*^2CoWR' text is entered in name: 'user[password]' input field.
+[32mINFO    [0m root:general_functions.py:76 '' button is clicked.
+[32mINFO    [0m root:general_functions.py:66 'Sign up' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 'Sign up' button is clicked.
+[32mINFO    [0m root:general_functions.py:105 Loaded JSON data: {'url': 'https://courses.ultimateqa.com/collections', 'login': {'email': '', 'password': ''}}.
+[32mINFO    [0m root:registration.py:37 Login data: Email: 'colemanbrooke@example.com', Password: '(*^2CoWR'.
+[32mINFO    [0m root:general_functions.py:124 JSON data written to file 'my_config.json'
+[32mINFO    [0m root:registration.py:27 Registered successfully!!!
+[32mINFO    [0m root:registration.py:28 Home page is opened.
+[32mINFO    [0m root:general_functions.py:57 'selenium' text is entered in name: 'q' input field.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:general_functions.py:66 '' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 '' button is clicked.
+[1m[31mERROR   [0m root:general_functions.py:70 Error in 'find_and_click': Message: Element <a href="/collections?q=selenium&page=2"> could not be scrolled into view
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:191:5
+ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:351:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:166:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
+
+[32mINFO    [0m root:home.py:48 'Next page' button is clicked.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:general_functions.py:66 '' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 '' button is clicked.
+[1m[31mERROR   [0m root:general_functions.py:70 Error in 'find_and_click': Message: Element <a href="/collections?q=selenium&page=2"> could not be scrolled into view
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:191:5
+ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:351:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:166:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
+
+[32mINFO    [0m root:home.py:48 'Next page' button is clicked.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:general_functions.py:66 '' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 '' button is clicked.
+[1m[31mERROR   [0m root:general_functions.py:70 Error in 'find_and_click': Message: Element <a href="/collections?q=selenium&page=2"> could not be scrolled into view
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:191:5
+ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:351:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:166:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
+
+[32mINFO    [0m root:home.py:48 'Next page' button is clicked.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:general_functions.py:66 '' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 '' button is clicked.
+[1m[31mERROR   [0m root:general_functions.py:70 Error in 'find_and_click': Message: Element <a href="/collections?q=selenium&page=2"> could not be scrolled into view
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:191:5
+ElementNotInteractableError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:351:5
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:166:11
+interaction.clickElement@chrome://remote/content/marionette/interaction.sys.mjs:135:11
+clickElement@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:204:29
+receiveMessage@chrome://remote/content/marionette/actors/MarionetteCommandsChild.sys.mjs:84:31
+
+[32mINFO    [0m root:home.py:48 'Next page' button is clicked.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:general_functions.py:66 '' button is scrolled to.
+[32mINFO    [0m root:general_functions.py:67 '' button is clicked.
+[32mINFO    [0m root:home.py:48 'Next page' button is clicked.
+[32mINFO    [0m root:home.py:23 Search results are found.
+[32mINFO    [0m root:home.py:55 List of all titles: 'C# For QA Automation Engineers with Selenium Webdriver
+Selenium WebDriver Basics for Java
+Introduction to fast test execution in Sauce Labs and Browser Stack
+What are Implicit and Explicit Waits
+Page Objects in Test Automation
+Complete Selenium WebDriver with Java Bootcamp
+Complete Selenium Webdriver with C# - Build A Framework
+Complete Selenium WebDriver Bundle
+Selenium WebDriver - Working with Elements'
+[32mINFO    [0m root:home.py:37 Course 'selenium' not found in all items.
+[32mINFO    [0m root:test_existing_course_title_search.py:36 Program has ended at: 2024-02-07 11:42:08.976725
+[32mINFO    [0m root:test_existing_course_title_search.py:37 Program run duration is: 0:00:34.795840
+[32mINFO    [0m root:conftest.py:14 'Firefox' browser is closed.

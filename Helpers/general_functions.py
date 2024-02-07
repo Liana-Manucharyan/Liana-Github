@@ -60,8 +60,7 @@ class Helper:
             logging.error(f"Error in 'find_and_send_keys': {e}")
 
     def scroll_and_click(self, loc, sec=100):
-        try:  
-            self.find_elem_in_ui(loc)       
+        try:         
             elem = WebDriverWait(self.browser, sec).until(EC.element_to_be_clickable(loc))
             self.browser.execute_script("arguments[0].click();", elem)
             logging.info(f"'{elem.text}' button is scrolled to.")
@@ -71,18 +70,23 @@ class Helper:
             logging.error(f"Error in 'find_and_click': {e}")
 
     def find_and_click(self, loc, sec=100):
-        try:     
+        try: 
+            self.find_elem_in_ui(loc)    
             elem = WebDriverWait(self.browser, sec).until(EC.element_to_be_clickable(loc))
             logging.info(f"'{elem.text}' button is clicked.")
             elem.click()
         except Exception as e:
             logging.error(f"Error in 'find_and_click': {e}")        
 
-    def find_elem_in_ui(self, loc, sec=50):
+    def find_elem_in_ui(self, loc, sec=100):
         try:
             return WebDriverWait(self.browser, sec).until(EC.visibility_of_element_located(loc))
         except Exception as e:
             logging.error(f"Error in 'find_elem_in_ui': {e}")
+
+    def get_elements(self, loc, sec=100):
+            elem = self.browser.find_elements(*loc)
+            return elem
 
     def find_elems_in_ui(self, loc, sec=100):
         try:
@@ -101,7 +105,16 @@ class Helper:
                 logging.info(f"Loaded JSON data: {json_data}.")
                 return json_data
         except Exception as e:
-            logging.error(f"Error in 'parse_json_data': {e}")        
+            logging.error(f"Error in 'parse_json_data': {e}")   
+
+    def wait_for_search_results(self, *elems):
+        try:
+            WebDriverWait(self.browser, 100).until(
+                EC.presence_of_element_located(elems[0]) or 
+                EC.presence_of_element_located(elems[1])
+            )
+        except Exception as e:
+            logging.error(f"Error in 'wait_for_search_results': {e}")     
             
     def write_json_data(self, file_name, data):
         try:
