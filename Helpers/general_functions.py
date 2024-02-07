@@ -3,7 +3,6 @@ import os
 import json
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.common.action_chains import ActionChains
 
 
 class Helper:
@@ -18,24 +17,6 @@ class Helper:
             logging.info(f"Navigated to URL: '{url}'")
         except Exception as e:
             logging.error(f"Error in 'navigate_to_url': {e}")
-
-    def move_to_element(self, loc):
-        try:
-            elem = self.browser.find_element(*loc)
-            self.browser.execute_script("arguments[0].scrollIntoView();", elem)
-            return elem
-        except Exception as e:
-            logging.error(f"Error in 'move_to_element': {e}")
-            self.make_screenshot("move_to_elem_screen.png")
-
-    def mouse_hover(self, loc):
-        try:
-            elem = self.browser.find_element(*loc)
-            actions = ActionChains(self.browser)
-            actions.move_to_element(elem).perform()
-        except Exception as e:
-            logging.error(f"Error in 'mouse_hover': {e}")
-            self.make_screenshot("mouse_hover_screen.png")
 
     def find_elems_in_dom(self, loc, sec=100):
         try:
@@ -67,7 +48,7 @@ class Helper:
             logging.info(f"'{elem.text}' button is clicked.")
             elem.click()
         except Exception as e:
-            logging.error(f"Error in 'find_and_click': {e}")
+            logging.error(f"Error in 'scroll_and_click': {e}")
 
     def find_and_click(self, loc, sec=100):
         try: 
@@ -88,12 +69,6 @@ class Helper:
             elem = self.browser.find_elements(*loc)
             return elem
 
-    def find_elems_in_ui(self, loc, sec=100):
-        try:
-            return WebDriverWait(self.browser, sec).until(EC.visibility_of_all_elements_located(loc))
-        except Exception as e:
-            logging.error(f"Error in 'find_elems_in_ui': {e}")
-
     def make_screenshot(self, file_name):
         self.browser.save_screenshot(os.path.join(os.path.dirname(__file__), file_name))    
 
@@ -106,15 +81,6 @@ class Helper:
                 return json_data
         except Exception as e:
             logging.error(f"Error in 'parse_json_data': {e}")   
-
-    def wait_for_search_results(self, *elems):
-        try:
-            WebDriverWait(self.browser, 100).until(
-                EC.presence_of_element_located(elems[0]) or 
-                EC.presence_of_element_located(elems[1])
-            )
-        except Exception as e:
-            logging.error(f"Error in 'wait_for_search_results': {e}")     
             
     def write_json_data(self, file_name, data):
         try:

@@ -13,3 +13,4 @@ class WelcomePage(Helper):
             logging.info("'Login' page is opened.")
         except Exception as e:
             logging.error(f"Error in 'go_to_login_page': {e}")
+            self.save_screenshot("go_to_login_page_screen.png") 

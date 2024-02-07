@@ -1,0 +1,6 @@
+allure-pytest==2.13.2
+fake==0.8
+Faker==20.1.0
+pytest==8.0.0
+selenium==4.16.0
+virtualenv==20.25.0

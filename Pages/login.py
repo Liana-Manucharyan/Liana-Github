@@ -1,7 +1,6 @@
 import logging
 from selenium.webdriver.common.by import By
 from Helpers.general_functions import Helper
-import time
 
 
 class LoginPage(Helper):
@@ -17,6 +16,7 @@ class LoginPage(Helper):
             logging.info("'Sign-up' page is opened.")
         except Exception as e:
             logging.error(f"Error in 'go_to_register_page': {e}")
+            self.save_screenshot("go_to_register_pag_screen.png")   
 
     def login_to_app(self, email, password):
         try:
@@ -25,5 +25,6 @@ class LoginPage(Helper):
             self.find_and_click(self.btn_sign_in) 
             logging.info("Logged in successfully!!!") 
         except Exception as e:
-            logging.error(f"Error in 'login_to_app': {e}")      
+            logging.error(f"Error in 'login_to_app': {e}") 
+            self.save_screenshot("login_to_app_screen.png")        
             

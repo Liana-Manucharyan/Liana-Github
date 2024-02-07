@@ -2,7 +2,6 @@ import logging
 from selenium.webdriver.common.by import By
 from Helpers.general_functions import Helper
 from Test_data import my_data
-import time
 
 
 class RegistrationPage(Helper):
@@ -11,7 +10,6 @@ class RegistrationPage(Helper):
     inp_l_name = (By.ID, "user[last_name]")
     inp_email = (By.ID, "user[email]")
     inp_password = (By.ID, "user[password]")
-    #checkbox_terms = (By.XPATH, "//label[@for='user[terms]']")
     checkbox_terms = (By.ID, "user[terms]")
     btn_register = (By.XPATH, "//button[contains(text(),'Sign up')]")
     
@@ -27,7 +25,8 @@ class RegistrationPage(Helper):
             logging.info("Registered successfully!!!")
             logging.info("Home page is opened.")
         except Exception as e:
-            logging.error(f"Error in 'sign_up_to_app': {e}") 
+            logging.error(f"Error in 'sign_up_to_app': {e}")
+            self.save_screenshot("sign_up_to_app_screen.png")  
     
     def add_login_data_to_file(self, email, password):
         try:
@@ -38,3 +37,4 @@ class RegistrationPage(Helper):
             self.write_json_data("my_config.json", data)
         except Exception as e:
             logging.error(f"Error in 'add_login_data_to_file': {e}")
+            self.save_screenshot("add_login_data_to_file_screen.png") 
